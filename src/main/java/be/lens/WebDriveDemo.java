@@ -15,7 +15,14 @@ public class WebDriveDemo {
 
         //inputTextField -> <input class="gLFyf gsfi" ...
         WebElement searchFieldWebElement = webDriver.findElement(By.cssSelector("input.gLFyf.gsfi"));
-
         searchFieldWebElement.sendKeys("Spotted Hyena");
+        searchFieldWebElement.submit();
+
+        WebElement imagesLinkWebElement = webDriver.findElement(By.linkText("Afbeeldingen"));
+        imagesLinkWebElement.click();
+
+        WebElement imageWebElement = webDriver.findElements(By.cssSelector("a[class=rg_l]")).get(0);
+        WebElement imageLinkWebElement = imageWebElement.findElements(By.tagName("<img>")).get(0);
+        imageLinkWebElement.click();
     }
 }

@@ -44,3 +44,13 @@ WebElement Interface methods
 
     getTagName
 
+CssSelector tool:
+
+    https://try.jsoup.org/
+
+        fetch url -> enter url of webPage
+
+        css query -> a[class=rg_l]
+
+
+
