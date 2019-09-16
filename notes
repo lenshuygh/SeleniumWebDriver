@@ -26,3 +26,21 @@ Finding Elements
 
     XPath: xPath-expression
 
+WebElement Interface methods
+
+    clear
+
+    click
+
+    findElement(s)
+
+    getAttribute
+
+    getCssValue
+
+    sendKeys
+
+    getSize
+
+    getTagName
+

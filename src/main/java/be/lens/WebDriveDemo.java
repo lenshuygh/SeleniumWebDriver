@@ -1,6 +1,8 @@
 package be.lens;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class WebDriveDemo {
@@ -9,6 +11,11 @@ public class WebDriveDemo {
 
         WebDriver webDriver = new ChromeDriver();
 
-        webDriver.get("http://www.pluralsight.com");
+        webDriver.get("http://www.google.com");
+
+        //inputTextField -> <input class="gLFyf gsfi" ...
+        WebElement searchFieldWebElement = webDriver.findElement(By.cssSelector("input.gLFyf.gsfi"));
+
+        searchFieldWebElement.sendKeys("Spotted Hyena");
     }
 }
