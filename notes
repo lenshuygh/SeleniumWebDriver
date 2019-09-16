@@ -1,0 +1,28 @@
+Use Windows Env Var to point to driver's .exe files
+
+    System var:
+
+        GECKO_PATH  ->  C:\Users\Lens\IdeaProjects\PluralsightAutomatedWebTesting\tools_downloads\chromedriver_win32\
+
+    add to PATH:
+
+        %GEKCKO_PATH%;
+
+Finding Elements
+
+    ClassName: unique css className (index for multiple matches)
+
+    Id (prefered): most usefull & absolute
+
+    Name: name property of a HTML element
+
+    TagName: HTML tag
+
+    CssSelector
+
+    LinkText
+
+    PartialLinkText
+
+    XPath: xPath-expression
+
