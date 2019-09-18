@@ -52,5 +52,15 @@ CssSelector tool:
 
         css query -> a[class=rg_l]
 
+Radio Buttons
+
+    often have no ID
+
+        select by name
+
+        select by tag
+
+
+
 
 
