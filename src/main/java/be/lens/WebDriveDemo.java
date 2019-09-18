@@ -18,11 +18,12 @@ public class WebDriveDemo {
         searchFieldWebElement.sendKeys("Spotted Hyena");
         searchFieldWebElement.submit();
 
+        //WebElement imagesLinkWebElement = webDriver.findElements(By.linkText("Afbeeldingen")).get(0);
         WebElement imagesLinkWebElement = webDriver.findElement(By.linkText("Afbeeldingen"));
         imagesLinkWebElement.click();
 
         WebElement imageWebElement = webDriver.findElements(By.cssSelector("a[class=rg_l]")).get(0);
-        WebElement imageLinkWebElement = imageWebElement.findElements(By.tagName("<img>")).get(0);
+        WebElement imageLinkWebElement = imageWebElement.findElements(By.tagName("img")).get(0);
         imageLinkWebElement.click();
     }
 }
