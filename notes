@@ -61,6 +61,13 @@ Radio Buttons
         select by tag
 
 
+        <input type="radio" name="color" value="red" checked>Red<br>
+        <input type="radio" name="color" value="green">Green<br>
+        <input type="radio" name="color" value="blue">Blue<br>
+
+    List<WebElement> radioButtons = webDriver.findElements(By.name("color"));
+
+
 
 
 
