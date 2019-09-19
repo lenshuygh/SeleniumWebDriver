@@ -98,6 +98,33 @@ tables
 
     nested elements identification with XPath
 
+            <table>
+                <tr>
+                    <td>Table 1 Row 1</td>
+                    <td>
+                        <table>
+                            <tr><td>Table 2 Row 1</td></tr>
+                            <tr><td>Table 2 Row 2</td></tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+        WebElement outerTableWebElement = webDriver.findElement(By.tagName("table"));
+        WebElement innerTableWebElement = outerTableWebElement.findElement(By.tagName("table"));
+        WebElement rowWebElement = innerTableWebElement.findElements(By.tagName("td")).get(1);
+        System.out.println(rowWebElement.getText());
+
+     now with xpath:
+
+        WebElement rowWebElement = webDriver.findElement(By.xpath("/html/body/table/tbody/tr/td[2]/table/tbody/tr[2]/td"));
+        System.out.println(rowWebElement.getText());
+
+Wait
+
+    implicit wait
+
+    explicit wait
 
 
 
