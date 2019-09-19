@@ -68,6 +68,21 @@ Radio Buttons
     List<WebElement> radioButtons = webDriver.findElements(By.name("color"));
 
 
+intellij setting to open an html page from intellij
+
+    allows unsigned requests
+
+Checkboxes
+
+        <input type="checkbox" id="mayoCheckbox" value="mayo"> Mayo<br>
+        <input type="checkbox" id="lettuceCheckbox" value="lettuce"> Lettuce<br>
+        <input type="checkbox" id="turkeyCheckbox" value="turkey"> Turkey<br>
+
+    WebElement checkboxWebElement = webDriver.findElement(By.id("lettuceCheckbox"));
+    checkboxWebElement.click();
+
+
+
 
 
 
