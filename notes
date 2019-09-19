@@ -81,6 +81,22 @@ Checkboxes
     WebElement checkboxWebElement = webDriver.findElement(By.id("lettuceCheckbox"));
     checkboxWebElement.click();
 
+select items
+
+        <select id="select1">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                    <option value="maybe">Maybe</option>
+        </select>
+
+     WebElement selectWebElement = webDriver.findElement(By.id("select1"));
+     //wrapperClass from org.openqa.selenium.support.ui.Select;
+     Select select = new Select(selectWebElement);
+     select.selectByVisibleText("Maybe"
+
+tables
+
+    nested elements identification with XPath
 
 
 
