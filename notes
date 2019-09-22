@@ -148,3 +148,57 @@ Waiting
     explicit wait only waits for a specific element, implicit wait waits on every element
 
 
+Selenium Server
+
+    remotely execute tests
+
+    can be ran as part of a grid
+
+    can run tests from webdriver or ide
+
+    get server from seleniumhq.org
+
+    start with
+
+        java -jar selenium-server-standalone-3.141.59.jar
+
+    running a test on server
+
+        remove the normal Webdriver declaration and add
+
+            WebDriver webDriver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), DesiredCapabilities.chrome());
+
+        catch exception, add to method signature
+
+            throws MalformedURLException
+
+    in gridmode
+
+        setting up the hub (from grid)
+
+            starting the hub
+
+                java -jar selenium-server-standalone-3.141.59.jar -role hub
+
+            in browser goto
+
+                http://192.168.0.123:4444/grid/console
+
+            start a node in another cmd window with the info from the previously started hub after the hub-flag
+
+                java -jar selenium-server-standalone-3.141.59.jar -role node -hub http://192.168.0.123:4444/grid/register/
+
+            in the browser we can see the added node now (refresh)
+
+            add a 2nd node, specify a different port than the standard 5555 port
+
+                java -jar selenium-server-standalone-3.141.59.jar -role node -hub http://192.168.0.123:4444/grid/register/ -port 5556
+
+            2nd node can be seen in the browser (refresh)
+
+            ps:
+
+                WebDriver webDriver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), new DesiredCapabilities("firefox","", Platform.VISTA));
+
+
+

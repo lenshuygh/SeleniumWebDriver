@@ -1,17 +1,27 @@
 package be.lens;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 public class WebDriveDemo {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MalformedURLException {
         //System.setProperty("webdriver.chrome.driver",System.getenv("WEBDRIVER_PATH")+"\\chromedriver_win32\\chromedriver.exe");
 
-        WebDriver webDriver = new ChromeDriver();
+        //WebDriver webDriver = new ChromeDriver();
+
+        // remote webDriver
+        WebDriver webDriver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), DesiredCapabilities.chrome());
+
 
         //webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
