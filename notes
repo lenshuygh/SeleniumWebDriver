@@ -142,6 +142,9 @@ Waiting
         are not dynamic (and it should be available instantly),
         hence the need or no need for a wait
 
+            WebDriverWait webDriverWait = new WebDriverWait(webDriver, 10);
+            webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.linkText("Images")));
+
     explicit wait only waits for a specific element, implicit wait waits on every element
 
 

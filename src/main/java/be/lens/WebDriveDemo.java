@@ -4,8 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WebDriveDemo {
     public static void main(String[] args) {
@@ -13,7 +13,7 @@ public class WebDriveDemo {
 
         WebDriver webDriver = new ChromeDriver();
 
-        webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        //webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         webDriver.get("http://www.google.com");
 
@@ -21,6 +21,10 @@ public class WebDriveDemo {
         WebElement searchFieldWebElement = webDriver.findElement(By.cssSelector("input.gLFyf.gsfi"));
         searchFieldWebElement.sendKeys("Spotted Hyena");
         searchFieldWebElement.submit();
+
+        // wait
+        WebDriverWait webDriverWait = new WebDriverWait(webDriver, 10);
+        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.linkText("Afbeeldingen")));
 
         //WebElement imagesLinkWebElement = webDriver.findElements(By.linkText("Afbeeldingen")).get(0);
         WebElement imagesLinkWebElement = webDriver.findElement(By.linkText("Afbeeldingen"));
