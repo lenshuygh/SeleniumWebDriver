@@ -200,5 +200,47 @@ Selenium Server
 
                 WebDriver webDriver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), new DesiredCapabilities("firefox","", Platform.VISTA));
 
+    parallel processing
+
+        the grid makes it possible but you have to initiate it
+
+    grid strategies
+
+        across multiple machines eg:
+
+            different unused pc's
+
+            VMs/hypervisors
+
+            DOCKER instances
+
+            Amazon EC2
+
+            your own cloud foundry
+
+Framework
+
+    Why not only record tests with Selenium IDE?
+
+        brittle tests: test depends on web app only, if the app changes all the recorded tests need to be rewritten
+
+            with a framework only the part that is changed needs to be changed, usually only in 1 place
+
+        recording is slow in the long run and with added complexity
+
+            a framework starts off slower but soon takes on speed with the reusability of the already made parts
+
+    Page Object Model
+
+        mapping the model of the test framework after the model of the pages of the application:
+
+            Login Page          <--             Login Page Object       <--\
+            Shopping Cart       <--             Shopping Cart Object    <-- |---            TESTS
+            Orders Page         <--             Orders Page Object      <--/
+
+
+
+
+
 
 
