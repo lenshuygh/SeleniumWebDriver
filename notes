@@ -120,12 +120,28 @@ tables
         WebElement rowWebElement = webDriver.findElement(By.xpath("/html/body/table/tbody/tr/td[2]/table/tbody/tr[2]/td"));
         System.out.println(rowWebElement.getText());
 
-Wait
+Waiting
 
     implicit wait
 
+        sets a global setting for the driver so that every time an element is
+        selected its going to wait for that timeout if it cannot find that element
+
+        it is refreshing the DOM every 500ms to see if the element exists yet
+
+        this wait delays on every element on the page
+
+
+            webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+                this waits 10 seconds for each elemnt in the page to show up
+
     explicit wait
 
+        use this when you can specify when something is dynamic and other things
+        are not dynamic (and it should be available instantly),
+        hence the need or no need for a wait
 
+    explicit wait only waits for a specific element, implicit wait waits on every element
 
 
