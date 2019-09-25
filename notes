@@ -243,4 +243,12 @@ Framework
 
 
 
+JavaScript commands for scrolling:
 
+    String elem = "//*[@id=\"pathContent\"]/div[128]/a";
+
+            WebElement myelement = Browser.driver.findElement(By.xpath(elem));
+
+            JavascriptExecutor jse2 = (JavascriptExecutor)Browser.driver;
+            jse2.executeScript("arguments[0].scrollIntoView()", myelement);
+            jse2.executeScript("window.scrollBy(0,-250)");
